@@ -15,6 +15,7 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { CategoryComponent } from './category/category.component';
 import { TodoComponent } from './todo/todo.component';
+import { LobbyMassagesComponent } from './lobbyMassages/lobbyMassages.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TodoComponent } from './todo/todo.component';
     NavbarComponent,
     FooterComponent,
     CategoryComponent,
-    TodoComponent
+    TodoComponent,
+    LobbyMassagesComponent
   ],
   imports: [
     BrowserModule,

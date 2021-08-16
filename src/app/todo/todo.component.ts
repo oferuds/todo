@@ -17,7 +17,7 @@ export class TodoComponent implements OnInit {
   dataStatus: string = 'Add';
   todoId: string;
 
-  constructor( private todoService: TodoService, private activatedRoute: ActivatedRoute ) { }
+  constructor(private todoService: TodoService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -26,12 +26,10 @@ export class TodoComponent implements OnInit {
     this.todoService.loadTodos(this.catId).subscribe(val => {
       this.todos = val;
       console.log(this.todos);
-
     })
-
   }
 
-  onSubmit(f:NgForm) {
+  onSubmit(f: NgForm) {
 
     if (this.dataStatus == 'Add') {
       let todo = {
@@ -44,7 +42,7 @@ export class TodoComponent implements OnInit {
     }
     else if (this.dataStatus == 'Edit') {
 
-      this.todoService.updateTodo(this.catId, this.todoId, f.value.todoText );
+      this.todoService.updateTodo(this.catId, this.todoId, f.value.todoText);
       f.resetForm();
       this.dataStatus = 'Add';
 
@@ -54,30 +52,30 @@ export class TodoComponent implements OnInit {
 
   }
 
-  onEdit (todo: string, id: string) {
+  onEdit(todo: string, id: string) {
 
     this.todoValue = todo;
     this.dataStatus = 'Edit';
     this.todoId = id;
 
-   }
+  }
 
-   onDelete ( id: string ) {
+  onDelete(id: string) {
 
-    this.todoService.deleteTodo( this.catId, id );
+    this.todoService.deleteTodo(this.catId, id);
 
-   }
+  }
 
-   completeTodo (todoId: string) {
+  completeTodo(todoId: string) {
 
     this.todoService.markComplete(this.catId, todoId);
 
-   }
+  }
 
-   uncompleteTodo (todoId: string) {
+  uncompleteTodo(todoId: string) {
 
     this.todoService.markUncomplete(this.catId, todoId);
 
-   }
+  }
 
 }

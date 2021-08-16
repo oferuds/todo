@@ -39,10 +39,10 @@
             <i class="far fa-check-circle text-success" (click) = 'completeTodo(todo.id)' *ngIf = '!todo.data.isCompleted'></i>
             <i class="far fa-times-circle text-danger" (click) = 'uncompleteTodo(todo.id)' *ngIf = 'todo.data.isCompleted'></i>
             <div class="todo-tools">
-              <small>
+              <!-- <small> -->
               <i class="fas fa-pencil-alt text-warning"  (click) = 'onEdit(todo.data.todo, todo.id)'></i>
               <i class="fas fa-trash text-danger" (click) = 'onDelete( todo.id )'></i>
-              </small>
+              <!-- </small> -->
 
             </div>
           </div>
